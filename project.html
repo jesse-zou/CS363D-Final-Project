@@ -13234,7 +13234,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[313]:</div>
+<div class="prompt input_prompt">In&nbsp;[329]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Imports</span>
@@ -13261,6 +13261,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">AdaBoostClassifier</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">,</span> <span class="n">VotingClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.utils._testing</span> <span class="k">import</span> <span class="n">ignore_warnings</span>
 <span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="k">import</span> <span class="n">ConvergenceWarning</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">axes</span>
 
 <span class="c1"># Type annotations</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
@@ -13497,10 +13498,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[324]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_preview</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_preview</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a dictionary of DataFrames, loops through each and displays:</span>
 <span class="sd">        - the name of the data set</span>
@@ -13528,7 +13529,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[325]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_preview</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span>
@@ -14002,7 +14003,7 @@ NASDAQ dataset preview:
 <div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_features</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_features</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a dictionary of DataFrames, loops through each and displays:</span>
 <span class="sd">        - the name of the data set</span>
@@ -14074,7 +14075,7 @@ NASDAQ dataset features:
 <div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_class_balance</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_class_balance</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a dictionary of DataFrames, loops through each and displays:</span>
 <span class="sd">        - the name of the data set</span>
@@ -14151,11 +14152,11 @@ There isn&#39;t a class inbalance since the amount of data with label 1 and labe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[326]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get stats on each attribute in DOW30</span>
-<span class="k">def</span> <span class="nf">show_statistics</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">show_statistics</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a dictionary of DataFrames, loops through each and displays:</span>
 <span class="sd">        - the name of the data set</span>
@@ -14779,11 +14780,11 @@ NASDAQ dataset statistics:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="prompt input_prompt">In&nbsp;[330]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data Visualization Helper Function</span>
-<span class="k">def</span> <span class="nf">box_plot</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">col_name</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">box_plot</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span> <span class="n">col_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ax</span><span class="p">:</span> <span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a dictionary of DataFrames and a column to compare, loops through each and displays:</span>
 <span class="sd">        - a box plot comparing the data sets for that column</span>
@@ -16284,7 +16285,7 @@ NASDAQ dataset statistics:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="We-tried-three-different-feature-engineerings.">We tried three different feature engineerings.<a class="anchor-link" href="#We-tried-three-different-feature-engineerings.">&#182;</a></h3>
+<h3 id="We-tried-five-different-feature-engineerings.">We tried five different feature engineerings.<a class="anchor-link" href="#We-tried-five-different-feature-engineerings.">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16443,7 +16444,7 @@ Accuracy: 55.31 (+/- 0.49) [Ensemble]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+<h3 id="Results:">Results:<a class="anchor-link" href="#Results:">&#182;</a></h3>
 <pre><code>Feature Engineering 2 results for DOW30:
 Accuracy: 53.37 (+/- 1.33) [SVM]
 Accuracy: 51.08 (+/- 2.67) [KNN]
@@ -16512,8 +16513,8 @@ Accuracy: 54.92 (+/- 1.02) [Ensemble]</code></pre>
             <span class="c1"># Add the data set labels of each of other data sets. Shifts the labels down one</span>
             <span class="c1"># so that each data point now also contains the label of the previous data point.</span>
             <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="n">other_name</span><span class="p">:</span>
-                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">other_dataset_labels</span>
-                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">other_dataset_labels</span>
+                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
         
         <span class="c1"># Drop the first data point since it does not have a previous label</span>
         <span class="n">features</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">index</span><span class="p">[[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -16604,7 +16605,7 @@ Accuracy: 54.92 (+/- 1.02) [Ensemble]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+<h3 id="Results:">Results:<a class="anchor-link" href="#Results:">&#182;</a></h3>
 <pre><code>Feature Engineering 3 results for DOW30:
 Accuracy: 54.03 (+/- 0.53) [SVM]
 Accuracy: 49.94 (+/- 2.67) [KNN]
@@ -16766,7 +16767,7 @@ Accuracy: 54.92 (+/- 1.30) [Ensemble]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+<h3 id="Results:">Results:<a class="anchor-link" href="#Results:">&#182;</a></h3>
 <pre><code>Feature Engineering 4 results for DOW30:
 Accuracy: 54.38 (+/- 0.19) [SVM]
 Accuracy: 52.35 (+/- 2.95) [KNN]
@@ -16935,7 +16936,7 @@ Accuracy: 53.55 (+/- 4.36) [Ensemble]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-
+<h3 id="Results:">Results:<a class="anchor-link" href="#Results:">&#182;</a></h3>
 <pre><code>Feature Engineering 5 results for DOW30:
 Accuracy: 53.72 (+/- 1.14) [SVM]
 Accuracy: 50.70 (+/- 2.90) [KNN]
@@ -16965,11 +16966,11 @@ Accuracy: 54.71 (+/- 1.65) [Ensemble]</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[319]:</div>
+<div class="prompt input_prompt">In&nbsp;[323]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">feature_engineer_5</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span>
-                      <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]]:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">feature_engineer_5</span><span class="p">(</span><span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span>
+                      <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]]:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Formats the data sets based on the 2nd feature engineering. Adds all engineered features ---</span>
 <span class="sd">    Previous Day&#39;s Label, MACD, Accumulation/Distribution, Aroon, and Stochastic Oscillator ---</span>
@@ -17009,8 +17010,8 @@ Accuracy: 54.71 (+/- 1.65) [Ensemble]</code></pre>
             <span class="c1"># Add the data set labels of each of other data sets. Shifts the labels down one</span>
             <span class="c1"># so that each data point now also contains the label of the previous data point.</span>
             <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="n">other_name</span><span class="p">:</span>
-                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">other_dataset_labels</span>
-                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">other_dataset_labels</span>
+                <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">features</span><span class="p">[</span><span class="n">other_name</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
         
         <span class="c1"># Drop the first 26 data points since they does not have a moving average</span>
         <span class="n">features</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">features</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">)],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -17416,7 +17417,7 @@ Accuracy: 54.71 (+/- 1.65) [Ensemble]
 <li>For SP500, feature engineering 5 performs the best. Among all methods, Naive Bayes generates the best accuracy, 54.83%.</li>
 <li>For NASDAQ, feature engineering 4 and 5 both perform the best. Among all methods, SVM and Neural Network both generate the best accuracies, 55.74%.</li>
 </ul>
-<p>Overall, SVM performs the best and KNN performs the worst. In every case, the ensemble model did not perform the best, and one of the subclassifiers performed better. Some reasons why this would happen is that our models were not diverse or accurate enough. Often times, KNN would drag the accuracy down, and based on the accuracies, the nerual network and the Naive Bayes classifier would sometimes perform very similarly, signifying that our models were not very diverse. Overall, The sub-classifiers and the primary model didn’t work very well with our datasets in general. Because the stock market price is influenced by a complex set of factors, more data, more features and better feature engineering should be used based on professional knowledge in order to build a better model.</p>
+<p>Overall, SVM performed the best and KNN performed the worst. In every case, the ensemble model did not perform the best, and one of the subclassifiers performed better. Some reasons why this would happen is that our models were not diverse or accurate enough. Often times, KNN would drag the accuracy down, and based on the accuracies, the neural network and the Naive Bayes classifier would sometimes perform very similarly, signifying that our models were not very diverse. Overall, The sub-classifiers and the primary model didn’t work very well with our data sets in general. Because the stock market price is influenced by a complex set of factors, more data, more features and better feature engineering should be used based on professional knowledge in order to build a better model.</p>
 
 </div>
 </div>
